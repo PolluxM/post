@@ -22,9 +22,9 @@ def send_email():
             server = smtplib.SMTP_SSL('smtp.yandex.ru', 465)
             server.login(sender_email, password)
             server.send_message(msg)
-            print('Письмо доставлено!')
+            result_label.config(text='Письмо доставлено!')
         except Exception as e:
-            print(f'Ошибка: {e}')
+            result_label.config(f'Ошибка: {e}')
         finally:
             if server:
                 server.quit()
